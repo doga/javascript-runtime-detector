@@ -8,17 +8,17 @@ const runtimes = {
 }
 
 function detectRuntime() {
-  if (process?.release?.name?.match(/node/i)) {
-    return runtimes.node;
-  }
-  if (process?.release?.name?.match(/io.js/i)) {
-    return runtimes.io;
-  }
   if (typeof Deno !== 'undefined'){
     return runtimes.deno;
   }
   if (typeof Bun !== 'undefined'){
     return runtimes.bun;
+  }
+  if (process?.release?.name?.match(/node/i)) {
+    return runtimes.node;
+  }
+  if (process?.release?.name?.match(/io.js/i)) {
+    return runtimes.io;
   }
   return runtimes.browser;
 }
