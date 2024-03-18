@@ -14,10 +14,10 @@ function detectRuntime() {
   if (process?.release?.name?.match(/io.js/i)) {
     return runtimes.io;
   }
-  if (typeof Deno !== 'undefined'){
+  if (typeof Deno){
     return runtimes.deno;
   }
-  if (typeof Bun !== 'undefined'){
+  if (typeof Bun){
     return runtimes.bun;
   }
   return runtimes.browser;
