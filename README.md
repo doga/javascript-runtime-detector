@@ -32,7 +32,12 @@ console.info(`  A browser: ${runtime === runtimes.browser}`);
 Sample output for the code above:
 
 ```text
-
+JavaScript runtime identified as: deno
+Runtime is:
+  Deno:      true
+  Node.js:   false
+  IO.js:     false
+  A browser: false
 ```
 
 ∎
