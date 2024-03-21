@@ -24,6 +24,7 @@ const runtime = detectRuntime();
 console.info(`JavaScript runtime identified as: ${runtime}`);
 console.info(`Runtime is:`);
 console.info(`  Deno:      ${runtime === runtimes.deno}`);
+console.info(`  Bun:       ${runtime === runtimes.bun}`);
 console.info(`  Node.js:   ${runtime === runtimes.node}`);
 console.info(`  IO.js:     ${runtime === runtimes.io}`);
 console.info(`  A browser: ${runtime === runtimes.browser}`);
@@ -35,6 +36,7 @@ Sample output for the code above:
 JavaScript runtime identified as: deno
 Runtime is:
   Deno:      true
+  Bun:       false
   Node.js:   false
   IO.js:     false
   A browser: false
