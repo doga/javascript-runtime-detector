@@ -4,25 +4,35 @@ Tells if the current JavaScript runtime is something other than a browser, such 
 
 ## Usage example
 
-```shell
-$ deno
-Deno 1.41.3
-exit using ctrl+d, ctrl+c, or close()
-REPL is running with all permissions allowed.
-To specify permissions, run `deno repl` with allow flags.
-> import {detectRuntime, runtimes} from 'https://esm.sh/gh/doga/javascript-runtime-detector@0.1.3/mod.mjs';
-undefined
-> detectRuntime()
-"deno"
-> detectRuntime() === runtimes.deno
-true
-> detectRuntime() === runtimes.node
-false
-> detectRuntime() === runtimes.io
-false
-> detectRuntime() === runtimes.browser
-false
->
+_Tip (requires Deno): To run the following example, type this in your terminal:_
+
+- `deno run --allow-net --allow-run --allow-env --allow-read https://deno.land/x/mdrb/mod.ts https://raw.githubusercontent.com/doga/javascript-runtime-detector/main/README.md`.
+
+<details data-mdrb>
+<summary>Detect and print out the current JavaScript runtime info.</summary>
+
+<pre>
+description = '''
+Running this example is safe, it will not read or write anything to your filesystem.
+'''
+</pre>
+</details>
+
+```javascript
+import {detectRuntime, runtimes} from 'https://esm.sh/gh/doga/javascript-runtime-detector@0.1.3/mod.mjs';
+const runtime = detectRuntime();
+console.info(`JavaScript runtime identified as: ${runtime}`);
+console.info(`Runtime is:`);
+console.info(`  Deno:      ${runtime === runtimes.deno}`);
+console.info(`  Node.js:   ${runtime === runtimes.node}`);
+console.info(`  IO.js:     ${runtime === runtimes.io}`);
+console.info(`  A browser: ${runtime === runtimes.browser}`);
+```
+
+Sample output for the code above:
+
+```text
+
 ```
 
 ∎
